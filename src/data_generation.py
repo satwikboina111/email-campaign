@@ -3,12 +3,15 @@ import numpy as np
 import os
 import random
 
-from utils import save_df_as_csv
+from utils import save_df_as_csv,load_config_file
 
 # Constants
 n = 5000
 locations = ['NY', 'CA', 'TX', 'FL', 'IL']
 genders = ['M', 'F']
+
+# import config
+config = load_config_file()
 
 # Simulate data
 np.random.seed(42)
@@ -34,7 +37,7 @@ df["conversion"] = df.apply(lambda row:
 
 # Save to CSV
 output_dir = os.path.join(os.path.dirname(__file__), "..",'Data',"input")
-output_file = "email_campaign.csv"
+output_file = config["input_file_name"]
 
 save_df_as_csv(df, output_dir, output_file)
 

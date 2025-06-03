@@ -1,0 +1,19 @@
+input_file_name: "email_campaign.csv"
+
+granularity: ["group", "user_id"]
+int_vars: ["user_id", "age", "click", "conversion"]
+category_vars: ["group", "gender"]
+
+value_set:
+  group: ["A", "B"]
+  gender: ["M", "F"]
+  click: [0, 1]
+  conversion: [0, 1]
+
+one_to_one_vars:
+  - ["group", "email_version"]
+
+cross_consistent_vars:
+  - ["click", "conversion"]
+
+
