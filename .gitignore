@@ -1,0 +1,6 @@
+.conda
+Data/
+.env
+src/__pycache__/
+src/.pytest_cache/
+src/.mypy_cache/
